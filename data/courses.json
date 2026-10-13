@@ -1,0 +1,62 @@
+[
+  {
+    "id": "smm132-corporate-finance",
+    "code": "SMM132",
+    "title": "Corporate Finance & Valuations",
+    "level": "MSc (Postgraduate)",
+    "program": "MSc Finance / MSc Corporate Finance",
+    "institution": "Bayes Business School, City St George's, University of London",
+    "term": "Autumn Term (Term 1)",
+    "description": "Advanced corporate finance course covering capital structure theory, payout policies, valuation methodologies (DCF, Multiples, LBO), cost of capital estimation, risk management, and capital budgeting decisions.",
+    "syllabus": "/docs/syllabi/SMM132_Syllabus_2025-2026.pdf",
+    "repository": "https://github.com/bayes-finance/SMM132-corporate-finance-materials",
+    "slides": "https://moodle.city.ac.uk/course/view.php?id=SMM132",
+    "officeHours": "Tuesdays 14:00 - 16:00 (Room 5012 / MS Teams)",
+    "topics": ["Valuation", "Capital Structure", "Cost of Capital", "Payout Policy", "LBO Modeling"]
+  },
+  {
+    "id": "smm245-mergers-acquisitions",
+    "code": "SMM245",
+    "title": "Mergers & Acquisitions and Corporate Restructuring",
+    "level": "MSc (Postgraduate)",
+    "program": "MSc Corporate Finance / MBA",
+    "institution": "Bayes Business School, City St George's, University of London",
+    "term": "Spring Term (Term 2)",
+    "description": "Comprehensive analysis of M&A transactions, takeover defense strategies, deal structuring, regulatory frameworks, antitrust review, target valuation, proxy contests, and post-merger integration challenges.",
+    "syllabus": "/docs/syllabi/SMM245_Syllabus_2025-2026.pdf",
+    "repository": "https://github.com/bayes-finance/SMM245-ma-restructuring",
+    "slides": "https://moodle.city.ac.uk/course/view.php?id=SMM245",
+    "officeHours": "Thursdays 10:00 - 12:00 (Room 5012)",
+    "topics": ["Takeover Bids", "Synergy Valuation", "Deal Structuring", "Proxy Fights", "Antitrust"]
+  },
+  {
+    "id": "phd901-empirical-corporate-finance",
+    "code": "PHD901",
+    "title": "Empirical Research Methods in Corporate Finance",
+    "level": "PhD (Doctoral)",
+    "program": "PhD in Finance & Accounting",
+    "institution": "Bayes Business School, City St George's, University of London",
+    "term": "Full Academic Year",
+    "description": "Doctoral-level seminar examining frontier econometric techniques in empirical corporate finance: instrumental variables, difference-in-differences, regression discontinuity, panel data, machine learning applications, and text analysis in financial research.",
+    "syllabus": "/docs/syllabi/PHD901_Syllabus_2025-2026.pdf",
+    "repository": "https://github.com/bayes-finance/phd-empirical-finance-code",
+    "slides": "https://moodle.city.ac.uk/course/view.php?id=PHD901",
+    "officeHours": "By Appointment (PhD Candidates)",
+    "topics": ["Causal Inference", "Diff-in-Diff", "Regression Discontinuity", "Text Analysis", "Panel Econometrics"]
+  },
+  {
+    "id": "bs3102-corporate-governance",
+    "code": "BS3102",
+    "title": "Corporate Governance & Executive Incentives",
+    "level": "BSc (Undergraduate)",
+    "program": "BSc Business & Finance",
+    "institution": "Bayes Business School, City St George's, University of London",
+    "term": "Spring Term (Term 2)",
+    "description": "Undergraduate module exploring agency theory, board composition, executive compensation design, institutional shareholder voting, ESG integration, and international governance systems.",
+    "syllabus": "/docs/syllabi/BS3102_Syllabus_2025-2026.pdf",
+    "repository": "https://github.com/bayes-finance/BS3102-corporate-governance",
+    "slides": "https://moodle.city.ac.uk/course/view.php?id=BS3102",
+    "officeHours": "Wednesdays 11:00 - 13:00 (Room 5012)",
+    "topics": ["Agency Theory", "Executive Equity", "Board Independence", "ESG Governance", "Shareholder Activism"]
+  }
+]

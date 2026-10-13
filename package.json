@@ -1,0 +1,23 @@
+{
+  "name": "academic-portfolio-anh-tran",
+  "version": "1.0.0",
+  "description": "Production-ready, ultra-responsive, accessible academic portfolio website for Professor Anh L. Tran",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server -D --port 1313",
+    "build": "hugo --minification --destination dist",
+    "build:static": "powershell -ExecutionPolicy Bypass -File build-static.ps1",
+    "serve": "npx -y http-server dist -p 8080",
+    "test": "node scripts/validate-site.js"
+  },
+  "keywords": [
+    "academic-portfolio",
+    "hugo",
+    "academic-cv",
+    "finance-professor",
+    "bayes-business-school"
+  ],
+  "author": "Professor Anh L. Tran",
+  "license": "MIT",
+  "devDependencies": {}
+}

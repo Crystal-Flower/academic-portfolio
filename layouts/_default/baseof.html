@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="light">
+{{ partial "head.html" . }}
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  {{ partial "nav.html" . }}
+
+  <main id="main-content" class="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  <!-- BibTeX Citation Modal -->
+  <div class="modal-overlay" id="bibtex-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-title" style="margin:0; font-size:1.25rem;">BibTeX Citation</h3>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <pre class="bibtex-code" id="bibtex-content"></pre>
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
+        <button class="btn btn-primary btn-sm" id="copy-bibtex-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy BibTeX
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "appointments": [
+    {
+      "role": "Full Professor of Finance",
+      "institution": "Bayes Business School, City St George's, University of London",
+      "period": "2021 – Present",
+      "location": "London, United Kingdom",
+      "description": "Leading research and teaching initiatives in empirical corporate finance, mergers & acquisitions, and corporate governance."
+    },
+    {
+      "role": "Associate Professor of Finance",
+      "institution": "Bayes Business School (formerly Cass Business School), City, University of London",
+      "period": "2016 – 2021",
+      "location": "London, United Kingdom"
+    },
+    {
+      "role": "Assistant Professor of Finance",
+      "institution": "Cass Business School, City, University of London",
+      "period": "2010 – 2016",
+      "location": "London, United Kingdom"
+    },
+    {
+      "role": "Visiting Scholar",
+      "institution": "Wharton School, University of Pennsylvania",
+      "period": "2018",
+      "location": "Philadelphia, PA, USA"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Finance",
+      "institution": "INSEAD",
+      "year": "2010",
+      "dissertation": "Essays on Institutional Investors, Corporate Governance, and Takeovers"
+    },
+    {
+      "degree": "M.Sc. in Management Research (Finance)",
+      "institution": "INSEAD",
+      "year": "2007"
+    },
+    {
+      "degree": "B.Sc. in Economics & Finance (First Class Honors)",
+      "institution": "London School of Economics (LSE)",
+      "year": "2004"
+    }
+  ],
+  "editorial": [
+    { "role": "Associate Editor", "journal": "Journal of Corporate Finance", "period": "2022 – Present" },
+    { "role": "Ad-Hoc Referee", "journal": "Journal of Finance, Review of Financial Studies, Journal of Financial Economics, Management Science, Journal of Financial and Quantitative Analysis", "period": "Ongoing" }
+  ],
+  "awards": [
+    { "title": "Fellow of the Higher Education Academy (FHEA)", "year": "2019", "issuer": "Advance HE UK" },
+    { "title": "Best Paper Award in Corporate Finance", "year": "2021", "issuer": "European Financial Management Association (EFMA)" },
+    { "title": "Excellence in MSc Teaching Award", "year": "2023", "issuer": "Bayes Business School" },
+    { "title": "Research Grant: Institutional Shareholder Activism", "year": "2020", "issuer": "Economic and Social Research Council (ESRC)" }
+  ],
+  "affiliations": [
+    "Vice President & Trustee, Vietnamese Finance Association International (VFAI)",
+    "Member, American Finance Association (AFA)",
+    "Member, European Finance Association (EFA)",
+    "Member, Financial Management Association (FMA)",
+    "Research Fellow, European Corporate Governance Institute (ECGI)"
+  ]
+}

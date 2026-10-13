@@ -1,0 +1,49 @@
+baseURL = 'https://www.anhluongtran.com/'
+locale = 'en-US'
+title = 'Professor Anh L. Tran | Bayes Business School, City, University of London'
+copyright = '© 2026 Professor Anh L. Tran. All rights reserved.'
+
+[params]
+  author = "Professor Anh L. Tran"
+  title = "Professor of Finance"
+  institution = "Bayes Business School, City St George's, University of London"
+  address = "106 Bunhill Row, London, EC1Y 8TZ, United Kingdom"
+  email = "anh.tran@city.ac.uk"
+  description = "Official academic portfolio of Professor Anh L. Tran, Chair in Finance at Bayes Business School. Research in corporate finance, M&A, institutional investors, governance, and executive compensation."
+  keywords = ["Anh Tran", "Anh Luong Tran", "Finance Professor", "Bayes Business School", "Corporate Finance", "Mergers and Acquisitions", "Institutional Investors", "Corporate Governance"]
+  
+  # Social & Academic Profiles
+  google_scholar = "https://scholar.google.com/citations?user=anh_tran"
+  ssrn = "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=384210"
+  orcid = "https://orcid.org/0000-0002-1234-5678"
+  scopus = "https://www.scopus.com/authid/detail.uri?authorId=36789123400"
+  researchgate = "https://www.researchgate.net/profile/Anh-Tran-14"
+  linkedin = "https://www.linkedin.com/in/anh-tran-bayes"
+  twitter = "https://twitter.com/anhtran_finance"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Biography"
+    url = "/biography/"
+    weight = 2
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 3
+  [[menu.main]]
+    name = "Courses"
+    url = "/courses/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

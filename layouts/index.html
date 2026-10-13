@@ -1,0 +1,142 @@
+{{ define "main" }}
+{{ $profile := hugo.Data.profile }}
+{{ $pubs := hugo.Data.publications }}
+{{ $news := hugo.Data.news }}
+
+<!-- Hero Banner -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-image-wrapper">
+      <img src="{{ $profile.avatar }}" alt="{{ $profile.name }} Profile Photo" class="hero-portrait" width="260" height="260">
+      <div class="hero-badge-container">
+        <span class="badge">Bayes Business School</span>
+        <span class="badge badge-outline">FHEA Fellow</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <h1>{{ $profile.name }} <span class="hero-native-name">({{ $profile.nativeName }})</span></h1>
+      <p class="hero-role">{{ $profile.title }}</p>
+      <p class="hero-institution">{{ $profile.institution }} ({{ $profile.formerInstitution }})</p>
+      
+      <p class="hero-bio">{{ $profile.bio }}</p>
+
+      <div class="hero-actions">
+        <a href="/publications/" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          View Publications
+        </a>
+        <a href="/biography/" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Curriculum Vitae (CV)
+        </a>
+        <a href="/contact/" class="btn btn-outline">Contact & Office</a>
+      </div>
+
+      <ul class="social-links" aria-label="Academic Social Networks">
+        <li><a href="{{ $profile.links.googleScholar }}" target="_blank" rel="noopener" class="social-chip">Google Scholar</a></li>
+        <li><a href="{{ $profile.links.ssrn }}" target="_blank" rel="noopener" class="social-chip">SSRN Profile</a></li>
+        <li><a href="{{ $profile.links.orcid }}" target="_blank" rel="noopener" class="social-chip">ORCID</a></li>
+        <li><a href="{{ $profile.links.researchgate }}" target="_blank" rel="noopener" class="social-chip">ResearchGate</a></li>
+        <li><a href="{{ $profile.links.linkedin }}" target="_blank" rel="noopener" class="social-chip">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Stats Counter Banner -->
+<div class="container">
+  <div class="stats-banner">
+    {{ range $profile.stats }}
+    <div class="stat-item">
+      <div class="stat-value">{{ .value }}</div>
+      <div class="stat-label">{{ .label }}</div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<!-- Research Areas & Focus -->
+<section class="section container">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Research Agenda</h2>
+      <p class="section-subtitle">Core areas of academic investigation and policy impact</p>
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    {{ range $profile.researchInterests }}
+    <div class="card">
+      <div style="width: 40px; height: 40px; background-color: var(--accent-light); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--accent-primary);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">{{ . }}</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--text-secondary);">
+        Empirical studies analyzing market efficiency, incentives, governance frameworks, and executive decision making.
+      </p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Featured Publications -->
+<section class="section container" style="background-color: var(--bg-surface); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--border-color); margin-bottom: 3.5rem;">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Featured Publications</h2>
+      <p class="section-subtitle">Selected papers published in leading finance & management journals</p>
+    </div>
+    <a href="/publications/" class="btn btn-outline btn-sm">Explore All Papers &rarr;</a>
+  </div>
+
+  <div class="grid grid-1" style="gap: 1.5rem;">
+    {{ range $pubs }}
+      {{ if .featured }}
+      <article class="card pub-card">
+        <div class="pub-header">
+          <div>
+            <span class="badge" style="margin-bottom: 0.4rem;">{{ .journal }} ({{ .year }})</span>
+            <h3 class="pub-title"><a href="{{ .doi }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+            <p class="pub-authors">
+              By {{ range $i, $author := .authors }}{{ if $i }}, {{ end }}{{ if eq $author "Anh L. Tran" }}<strong>{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}
+            </p>
+          </div>
+        </div>
+
+        <p class="pub-abstract">{{ .abstract }}</p>
+
+        <div class="pub-links">
+          {{ if .pdf }}<a href="{{ .pdf }}" target="_blank" rel="noopener" class="pub-link-btn">PDF Paper</a>{{ end }}
+          {{ if .doi }}<a href="{{ .doi }}" target="_blank" rel="noopener" class="pub-link-btn">DOI Article</a>{{ end }}
+          {{ if .ssrn }}<a href="{{ .ssrn }}" target="_blank" rel="noopener" class="pub-link-btn">SSRN Working Paper</a>{{ end }}
+          {{ if .github }}<a href="{{ .github }}" target="_blank" rel="noopener" class="pub-link-btn">GitHub Code & Data</a>{{ end }}
+          <button class="pub-link-btn btn-bibtex" data-bibtex="{{ .bibtex }}">Cite (BibTeX)</button>
+        </div>
+      </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<!-- Latest News & Announcements -->
+<section class="section container">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">News & Announcements</h2>
+      <p class="section-subtitle">Recent grants, keynotes, media appearances, and paper acceptances</p>
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    {{ range $news }}
+    <div class="card">
+      <span class="badge badge-outline" style="margin-bottom: 0.6rem;">{{ .date }}</span>
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;"><a href="{{ .link }}" target="_blank" rel="noopener" style="text-decoration:none; color:var(--text-primary);">{{ .title }}</a></h3>
+      <p style="font-size: 0.9rem; margin-bottom: 1rem;">{{ .summary }}</p>
+      <a href="{{ .link }}" target="_blank" rel="noopener" style="font-size:0.85rem; font-weight:600;">Read More &rarr;</a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,15 @@
+{
+  "name": "Professor Anh L. Tran Academic Portfolio",
+  "short_name": "Anh Tran",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#f8fafc",
+  "theme_color": "#1e3a8a",
+  "display": "standalone"
+}

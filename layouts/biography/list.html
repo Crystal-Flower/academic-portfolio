@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $profile := hugo.Data.profile }}
+{{ $bio := hugo.Data.biography }}
+
+<section class="section container">
+  <div class="section-header">
+    <div>
+      <h1 class="section-title">Biography & Academic CV</h1>
+      <p class="section-subtitle">Academic appointments, qualifications, awards, editorial roles, and professional affiliations</p>
+    </div>
+    <a href="{{ $profile.cvLink }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Full CV (PDF)
+    </a>
+  </div>
+
+  <div class="grid grid-2" style="gap: 3rem; margin-bottom: 3rem;">
+    <!-- Column 1: Appointments & Education -->
+    <div>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent-primary);">Academic Appointments</h2>
+      <div class="timeline">
+        {{ range $bio.appointments }}
+        <div class="timeline-item">
+          <div class="timeline-period">{{ .period }}</div>
+          <div class="timeline-role">{{ .role }}</div>
+          <div class="timeline-institution">{{ .institution }} • {{ .location }}</div>
+          {{ if .description }}<p style="font-size:0.9rem; margin-top:0.35rem; color:var(--text-muted);">{{ .description }}</p>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <h2 style="font-size: 1.4rem; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent-primary);">Education & Degrees</h2>
+      <div class="timeline">
+        {{ range $bio.education }}
+        <div class="timeline-item">
+          <div class="timeline-period">{{ .year }}</div>
+          <div class="timeline-role">{{ .degree }}</div>
+          <div class="timeline-institution">{{ .institution }}</div>
+          {{ if .dissertation }}<p style="font-size:0.88rem; margin-top:0.3rem; color:var(--text-muted); font-style:italic;">Dissertation: "{{ .dissertation }}"</p>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Column 2: Honors, Editorial Roles & Affiliations -->
+    <div>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent-primary);">Honors, Awards & Grants</h2>
+      <div class="grid grid-1" style="gap: 1rem; margin-bottom: 3rem;">
+        {{ range $bio.awards }}
+        <div class="card" style="padding: 1.25rem;">
+          <span class="badge" style="margin-bottom: 0.35rem;">{{ .year }}</span>
+          <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">{{ .title }}</h3>
+          <p style="font-size: 0.88rem; margin-bottom: 0; color: var(--text-muted);">Awarded by {{ .issuer }}</p>
+        </div>
+        {{ end }}
+      </div>
+
+      <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent-primary);">Editorial Service</h2>
+      <div class="card" style="margin-bottom: 3rem;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+          {{ range $bio.editorial }}
+          <li style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+            <strong style="color: var(--text-primary); font-size: 1rem;">{{ .role }}</strong> — {{ .journal }}
+            <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">{{ .period }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--accent-primary);">Professional Affiliations</h2>
+      <div class="card">
+        <ul style="padding-left: 1.2rem; margin: 0;">
+          {{ range $bio.affiliations }}
+          <li style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-secondary);">{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

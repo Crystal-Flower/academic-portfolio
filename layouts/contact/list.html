@@ -1,0 +1,111 @@
+{{ define "main" }}
+{{ $profile := hugo.Data.profile }}
+
+<section class="section container">
+  <div class="section-header">
+    <div>
+      <h1 class="section-title">Contact & Office Location</h1>
+      <p class="section-subtitle">Get in touch regarding academic collaborations, PhD supervision, media inquiries, or student office hours</p>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Contact Form -->
+    <div class="card">
+      <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Send a Direct Message</h2>
+      <form id="academic-contact-form" novalidate>
+        <div class="form-group">
+          <label for="contact-name" class="form-label">Full Name *</label>
+          <input type="text" id="contact-name" class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required>
+          <div class="form-error">Please enter your full name.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email" class="form-label">Email Address *</label>
+          <input type="email" id="contact-email" class="form-input" placeholder="e.g. s.jenkins@university.ac.uk" required>
+          <div class="form-error">Please enter a valid academic or professional email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-type" class="form-label">Inquiry Type</label>
+          <select id="contact-type" class="form-select">
+            <option value="research">Research & Academic Collaboration</option>
+            <option value="phd">PhD Supervision Inquiry</option>
+            <option value="media">Media & Keynote Engagement</option>
+            <option value="student">Student / Course Inquiry</option>
+            <option value="other">General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message" class="form-label">Message *</label>
+          <textarea id="contact-message" class="form-textarea" rows="5" placeholder="Please outline your proposal or question..." required></textarea>
+          <div class="form-error">Please enter your message details.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <!-- Office Details & Interactive Map Info -->
+    <div>
+      <div class="card" style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Office & Department Details</h2>
+        <ul class="contact-info-list">
+          <li class="contact-info-item">
+            <svg class="contact-info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <div>
+              <strong>Office Location:</strong><br>
+              {{ $profile.office }}<br>
+              Bayes Business School<br>
+              {{ $profile.address }}
+            </div>
+          </li>
+
+          <li class="contact-info-item">
+            <svg class="contact-info-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div>
+              <strong>Email:</strong><br>
+              <a href="mailto:{{ $profile.email }}">{{ $profile.email }}</a>
+            </div>
+          </li>
+
+          <li class="contact-info-item">
+            <svg class="contact-info-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <div>
+              <strong>Telephone:</strong><br>
+              {{ $profile.phone }}
+            </div>
+          </li>
+
+          <li class="contact-info-item">
+            <svg class="contact-info-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <strong>Office Hours (Term Time):</strong><br>
+              Tuesdays 14:00 - 16:00 (Room 5012)<br>
+              Thursdays 10:00 - 12:00 (MS Teams / Room 5012)
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Campus Transport & Interactive Map Card -->
+      <div class="card">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Campus Directions</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+          Bayes Business School is located in central London, near Moorgate and Old Street underground stations.
+        </p>
+
+        <div class="map-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span style="font-weight: 600;">106 Bunhill Row, London EC1Y 8TZ</span>
+          <a href="https://maps.google.com/?q=106+Bunhill+Row+London+EC1Y+8TZ" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ $courses := hugo.Data.courses }}
+
+<section class="section container">
+  <div class="section-header">
+    <div>
+      <h1 class="section-title">Courses & Teaching Portfolio</h1>
+      <p class="section-subtitle">Undergraduate, Postgraduate (MSc), Doctoral (PhD), and Executive Education modules</p>
+    </div>
+  </div>
+
+  <!-- Filter tabs by Degree Level -->
+  <div class="filter-bar">
+    <div class="filter-groups" style="justify-content: flex-start;">
+      <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-muted);">Filter by Level:</span>
+      <ul class="filter-tabs" aria-label="Filter courses by degree level">
+        <li><button class="filter-tab course-filter-tab active" data-filter="all">All Level Courses</button></li>
+        <li><button class="filter-tab course-filter-tab" data-filter="Postgraduate">MSc (Postgraduate)</button></li>
+        <li><button class="filter-tab course-filter-tab" data-filter="Doctoral">PhD (Doctoral)</button></li>
+        <li><button class="filter-tab course-filter-tab" data-filter="Undergraduate">BSc (Undergraduate)</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Course Cards Grid -->
+  <div id="course-list-container" class="grid grid-2" style="gap: 2rem;">
+    {{ range $courses }}
+    <div class="course-card-wrapper" data-level="{{ .level }}">
+      <article class="card course-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="course-code">{{ .code }}</span>
+            <span class="badge badge-outline">{{ .term }}</span>
+          </div>
+
+          <h2 class="course-title">{{ .title }}</h2>
+          <p style="font-size: 0.88rem; color: var(--accent-primary); font-weight: 600; margin-bottom: 0.5rem;">{{ .level }} • {{ .program }}</p>
+
+          <p class="course-description">{{ .description }}</p>
+
+          <div class="course-topics">
+            <p class="course-topics-title">Key Covered Topics</p>
+            <div class="topic-pills">
+              {{ range .topics }}
+              <span class="topic-pill">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
+            <span><strong>Office Hours:</strong> {{ .officeHours }}</span>
+          </div>
+
+          <div class="pub-links" style="margin-top: 1rem;">
+            {{ if .syllabus }}<a href="{{ .syllabus }}" target="_blank" rel="noopener" class="pub-link-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Download Syllabus (PDF)</a>{{ end }}
+            {{ if .repository }}<a href="{{ .repository }}" target="_blank" rel="noopener" class="pub-link-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> Course Repository</a>{{ end }}
+            {{ if .slides }}<a href="{{ .slides }}" target="_blank" rel="noopener" class="pub-link-btn">Moodle / Course Portal</a>{{ end }}
+          </div>
+        </div>
+      </article>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

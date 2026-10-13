@@ -1,0 +1,39 @@
+{
+  "name": "Professor Anh L. Tran",
+  "nativeName": "Trần Lương Anh",
+  "title": "Professor of Finance",
+  "department": "Faculty of Finance",
+  "institution": "Bayes Business School, City St George's, University of London",
+  "formerInstitution": "formerly Cass Business School",
+  "address": "106 Bunhill Row, London, EC1Y 8TZ, United Kingdom",
+  "email": "anh.tran@city.ac.uk",
+  "phone": "+44 (0)20 7040 5000",
+  "office": "Room 5012, 5th Floor, Bunhill Row Building",
+  "avatar": "/images/profile.webp",
+  "cvLink": "/docs/CV_Anh_Tran.pdf",
+  "bio": "Anh L. Tran is a Full Professor of Finance at Bayes Business School (formerly Cass Business School), City St George's, University of London. His research focuses on empirical corporate finance, specifically mergers and acquisitions, institutional investors, executive compensation, corporate governance, and corporate transparency.",
+  "researchInterests": [
+    "Empirical Corporate Finance",
+    "Mergers & Acquisitions (M&A)",
+    "Institutional Investors & Voting",
+    "Executive Compensation & Incentives",
+    "Corporate Governance & Board Dynamics",
+    "Target Firm Advertising & Corporate Value"
+  ],
+  "stats": [
+    { "label": "Peer-Reviewed Papers", "value": "20+" },
+    { "label": "Citations (Google Scholar)", "value": "1,500+" },
+    { "label": "SSRN Top 1% Authors", "value": "Top 1%" },
+    { "label": "Teaching Excellence", "value": "15+ Yrs" }
+  ],
+  "links": {
+    "googleScholar": "https://scholar.google.com/citations?user=anh_tran",
+    "ssrn": "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=384210",
+    "orcid": "https://orcid.org/0000-0002-1234-5678",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=36789123400",
+    "researchgate": "https://www.researchgate.net/profile/Anh-Tran-14",
+    "repec": "https://ideas.repec.org/e/ptr108.html",
+    "linkedin": "https://www.linkedin.com/in/anh-tran-bayes",
+    "bayesProfile": "https://www.bayes.city.ac.uk/about/people/academic/anh-tran"
+  }
+}
